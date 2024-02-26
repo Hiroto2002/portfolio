@@ -2,6 +2,7 @@ import { GlassChildCardBox } from "@/components/ui/GlassChildCardBox";
 import { PRODUCTS } from "@/constants/product";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -20,7 +21,7 @@ const page = () => {
       >
         {PRODUCTS.map((product) => (
           <GlassChildCardBox key={product.title} width="45%">
-            <article className="flex flex-row justify-center items-center gap-4">
+            <Link href={`/products/${product.id}`} className="flex flex-row justify-center items-center gap-4">
               <Image
                 src={`/images/icons/product/${product.src}`}
                 alt={product.title}
@@ -29,7 +30,7 @@ const page = () => {
                 className="object-contain m-auto w-[100px] h-[100px]"
               />
               <p className="w-fit font-semibold m-auto">{product.title}</p>
-            </article>
+            </Link>
           </GlassChildCardBox>
         ))}
         {PRODUCTS.length % 2 !== 0 && (
