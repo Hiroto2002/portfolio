@@ -34,7 +34,14 @@ export const ProfileCard = () => {
           className="flex flex-row justify-around w-full"
           style={{ justifyContent: "space-around" }}
         >
-          <Image src="/profile" alt="profile" width={100} height={100} />
+          <Image
+            src="/images/visual.jpg"
+            alt="profile"
+            width={175}
+            height={175}
+            className="object-contain"
+            style={{ borderRadius: "15px" }}
+          />
           <div>
             {PROFILE_COLUMNS.map((column) => (
               <div

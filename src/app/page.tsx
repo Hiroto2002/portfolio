@@ -64,13 +64,15 @@ export default function Home() {
       </GlassChildCardBox>
       <section className="flex flex-col">
         <article
-          className="flex flex-wrap justify-around items-center gap-4 m-auto"
+          className="flex flex-wrap justify-around items-center gap-4 m-auto "
           style={{ width: "calc(94vw - 2vh)" }}
         >
           {TECH_TYPES.map((tech) => (
-            <GlassChildCardBox key={tech} width="31%">
-              <p className="w-fit font-semibold m-auto">{tech}</p>
-            </GlassChildCardBox>
+            <>
+              <GlassChildCardBox key={tech} width="31%">
+                <p className="w-fit font-semibold m-auto">{tech}</p>
+              </GlassChildCardBox>
+            </>
           ))}
         </article>
         <article
