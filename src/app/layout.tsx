@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Noto_Serif } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { yellowCardGlass } from "@/variants/glassmorphism";
 
-const inter = Inter({ subsets: ["latin"] });
+const NotoSerif = Noto_Serif({ subsets: ["latin"]})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={inter.className}>
+      <body className={NotoSerif.className}>
         <Image
           src="/images/background.webp"
           alt="background"

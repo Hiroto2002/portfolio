@@ -1,4 +1,5 @@
 import { GlassChildCardBox } from "@/components/ui/GlassChildCardBox";
+import { TECH_LIST } from "@/constants/techs";
 import { ProfileCard } from "@/features/ProfileCard/components/ProfileCard";
 import { ProfileContentCard } from "@/features/ProfileContentCard/components/ProfileContentCard";
 
@@ -39,6 +40,8 @@ const CONTENTS = {
   },
 };
 
+const TECH_TYPES = ["フロントエンド", "バックエンド", "その他"];
+
 export default function Home() {
   return (
     <main className="flex flex-col items-center w-[94vw] mx-auto ">
@@ -51,7 +54,42 @@ export default function Home() {
           link={content.link}
         />
       ))}
-      <ProfileContentCard title="技術スタック" contents={[]}/>
+      <GlassChildCardBox>
+        <p
+          className="font-semibold text-xl text-center"
+          style={{ fontSize: "1.3rem", color: "rgba( 255, 212, 0)" }}
+        >
+          技術スタック
+        </p>
+      </GlassChildCardBox>
+      <section className="flex flex-col">
+        <article
+          className="flex flex-wrap justify-around items-center gap-4 m-auto"
+          style={{ width: "calc(94vw - 2vh)" }}
+        >
+          {TECH_TYPES.map((tech) => (
+            <GlassChildCardBox key={tech} width="31%">
+              <p className="w-fit font-semibold m-auto">{tech}</p>
+            </GlassChildCardBox>
+          ))}
+        </article>
+        <article
+          className="flex flex-wrap justify-around items-center gap-4 m-auto"
+          style={{ width: "calc(94vw - 2vh)" }}
+        >
+          {TECH_LIST.front.map((tech) => (
+            <GlassChildCardBox key={tech.title} width="20%">
+              <img
+                src={`/images/icons/front/${tech.src}`}
+                alt={tech.title}
+                width={100}
+                height={100}
+                className="object-contain m-auto w-[100px] h-[100px]"
+              />
+            </GlassChildCardBox>
+          ))}
+        </article>
+      </section>
     </main>
   );
 }
